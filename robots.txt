@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ingjampa-web.github.io/optoclinique/sitemap.xml
