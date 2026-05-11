@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://tu-dominio.com/">
+        <meta property="og:title"
+            content="Opto Clinique | Salud Visual Especializada">
+        <meta property="og:description"
+            content="Vuelve a ver la vida con claridad. Agenda tu examen de la vista hoy mismo en Emiliano Zapata.">
+
+        <meta property="og:image"
+            content="https://tu-dominio.com/images/og-image.jpg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <title>Opto Clinique | Expertos en salud visual</title>
+        <meta name="description"
+            content="Especialistas en optometría clínica. Examen de la vista profesional, adaptación de lentes y diagnóstico de salud visual.">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="bg-slate-50 text-slate-800 font-sans">
+
+        <nav
+            class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200">
+            <div
+                class="max-w-7xl mx-auto px-4 h-16 relative flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Logo"
+                        class="h-10 w-auto object-contain">
+                    <img src="images/name.png" alt="Opto Clinique"
+                        class="h-8 w-auto object-contain hidden md:block">
+                </div>
+
+                <div class="ml-auto">
+                    <a
+                        href="https://wa.me/527773394462?text=Hola%20me%20podr%C3%ADa%20dar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20OptoClinique%20por%20favor."
+                        target="_blank"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition inline-block whitespace-nowrap">
+                        Agendar Cita
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <header
+            class="relative bg-blue-900 text-white py-20 lg:py-32 overflow-hidden">
+            <div
+                class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="z-10 text-center lg:text-left">
+                    <h1
+                        class="text-4xl lg:text-6xl font-extrabold leading-tight">
+                        Vuelve a ver tu vida con <span
+                            class="text-blue-400">claridad.</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-blue-100">Exámenes de la vista
+                        completos y tecnología de vanguardia para tu salud
+                        ocular.</p>
+                    <button onclick="toggleModal()"
+                        class="mt-10 bg-white text-blue-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition">
+                        Agendar Cita Ahora
+                    </button>
+                </div>
+                <div class="hidden lg:block">
+                    <img src="images/optometrista.jpg" alt="Optometrista"
+                        class="rounded-2xl shadow-2xl border-4 border-white/10 object-cover w-full h-[500px]">
+                </div>
+            </div>
+        </header>
+
+        <section class="py-20 max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Nuestros Servicios</h2>
+                <div class="h-1 w-20 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <article
+                    class="service-card bg-white rounded-2xl shadow-sm border border-slate-100 p-6 cursor-pointer"
+                    onclick="openServiceModal('Examen Clínico', 'images/examen_ocular.jpg', 'Realizamos una evaluación visual completa con equipo de última generación para detectar anomalías y corregir tu visión de forma precisa.')">
+                    <img src="images/examen_ocular.jpg"
+                        class="rounded-xl mb-4 h-40 w-full object-cover">
+                    <h3 class="font-bold">Examen Clínico</h3>
+                </article>
+
+                <article
+                    class="service-card bg-white rounded-2xl shadow-sm border border-slate-100 p-6 cursor-pointer"
+                    onclick="openServiceModal('Lentes Graduados', 'images/lentes_graduado.jpg', 'Contamos con una amplia variedad de armazones y materiales de lentes (Antirreflejante, Blue Light, Fotocromáticos) para tu comodidad diaria.')">
+                    <img src="images/lentes_graduado.jpg"
+                        class="rounded-xl mb-4 h-40 w-full object-cover">
+                    <h3 class="font-bold">Lentes Graduados</h3>
+                </article>
+
+                <article
+                    class="service-card bg-white rounded-2xl shadow-sm border border-slate-100 p-6 cursor-pointer"
+                    onclick="openServiceModal('Lentes de Sol', 'images/sol/lente2.jpg', 'Protege tus ojos de los rayos UV con modelos de temporada que combinan estilo y salud visual.')">
+                    <img src="images/lente2.jpg"
+                        class="rounded-xl mb-4 h-40 w-full object-cover">
+                    <h3 class="font-bold">Lentes de Sol</h3>
+                </article>
+
+                <article
+                    class="service-card bg-white rounded-2xl shadow-sm border border-slate-100 p-6 cursor-pointer"
+                    onclick="openServiceModal('Lentes de Contacto', 'images/lentes_de_contacto.jpg', 'Adaptación profesional de lentes de contacto blandos, cosméticos y tóricos para quienes prefieren libertad total sin armazones.')">
+                    <img src="images/lentes_de_contacto.jpg"
+                        class="rounded-xl mb-4 h-40 w-full object-cover">
+                    <h3 class="font-bold">Lentes de Contacto</h3>
+                </article>
+
+                <article
+                    class="service-card bg-white rounded-2xl shadow-sm border border-slate-100 p-6 cursor-pointer"
+                    onclick="openServiceModal('Salud Ocular', 'images/salud_ocular.jpg', 'Detección oportuna de padecimientos oculares y asesoría para el cuidado preventivo de tu vista.')">
+                    <img src="images/salud_ocular.jpg"
+                        class="rounded-xl mb-4 h-40 w-full object-cover">
+                    <h3 class="font-bold">Salud Ocular</h3>
+                </article>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-100 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 text-center mb-12">
+                <h2 class="text-3xl font-bold">Modelos de Temporada</h2>
+                <div class="h-1 w-20 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto">
+                <button type="button" id="seasonPrevBtn"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-12 h-12 shadow flex items-center justify-center hover:bg-slate-50 transition">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+
+                <div class="overflow-hidden px-14">
+                    <div id="seasonCarouselTrack" class="flex gap-6 w-max">
+                        <script>
+                        const track = document.currentScript.parentElement;
+                        for(let i=1; i<=26; i++) {
+                            track.innerHTML += `
+                                <article class="season-card min-w-[220px] max-w-[220px] bg-white p-3 rounded-2xl shadow transition">
+                                    <div onclick="openGalleryModal(${i-1})" class="cursor-pointer overflow-hidden rounded-xl">
+                                        <img src="images/photo${i}.jpg" alt="Modelo ${i}" class="w-full aspect-square object-cover rounded-xl" onerror="this.src='https://via.placeholder.com/220?text=Foto+${i}'">
+                                    </div>
+                                    <p class="text-center mt-2 font-bold text-sm">Modelo ${i}</p>
+                                </article>`;
+                        }
+                    </script>
+                    </div>
+                </div>
+
+                <button type="button" id="seasonNextBtn"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full w-12 h-12 shadow flex items-center justify-center hover:bg-slate-50 transition">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <a
+            href="https://wa.me/527773394462?text=Hola%20me%20podr%C3%ADa%20dar%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20OptoClinique%20por%20favor."
+            target="_blank"
+            class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg z-50 hover:scale-110 transition">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </a>
+
+        <div id="contactModal" class="fixed inset-0 z-[100] hidden">
+            <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+                onclick="toggleModal()"></div>
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-md bg-white rounded-3xl p-8 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-6">Agendar Cita</h3>
+                <form action="https://api.web3forms.com/submit" method="POST"
+                    class="space-y-4">
+                    <input type="hidden" name="access_key"
+                        value="TU_LLAVE_AQUI">
+                    <input type="text" name="name" placeholder="Nombre Completo"
+                        required
+                        class="w-full p-3 bg-slate-100 rounded-xl outline-none">
+                    <input type="tel" name="phone"
+                        placeholder="WhatsApp / Teléfono" required
+                        class="w-full p-3 bg-slate-100 rounded-xl outline-none">
+                    <select name="service"
+                        class="w-full p-3 bg-slate-100 rounded-xl outline-none">
+                        <option>Agendar Examen de la Vista</option>
+                        <option>Cotizar Armazones/Lentes</option>
+                    </select>
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition">Enviar
+                        Solicitud</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="serviceModal"
+            class="fixed inset-0 z-[80] hidden flex items-center justify-center px-4">
+            <div id="serviceModalOverlay"
+                class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm opacity-0 transition-all duration-300"
+                onclick="closeServiceModal()"></div>
+            <div id="serviceModalPanel"
+                class="w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden opacity-0 scale-95 translate-y-4 transition-all duration-300 z-10">
+                <div class="grid md:grid-cols-2">
+                    <div class="h-64 md:h-full bg-slate-100">
+                        <img id="serviceModalImage" src alt
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 relative">
+                        <button type="button" onclick="closeServiceModal()"
+                            class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                            <i data-lucide="x" class="w-6 h-6"></i>
+                        </button>
+                        <h3 id="serviceModalTitle"
+                            class="text-2xl font-bold text-slate-900 mb-4"></h3>
+                        <p id="serviceModalDescription"
+                            class="text-slate-600 leading-relaxed text-sm"></p>
+                        <div class="mt-8">
+                            <button type="button"
+                                onclick="toggleModal(); closeServiceModal();"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition">Agendar
+                                Cita</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="galleryModal"
+            class="fixed inset-0 z-[90] hidden flex items-center justify-center px-4">
+            <div id="galleryModalOverlay"
+                class="absolute inset-0 bg-black/85 opacity-0 transition-all duration-300"
+                onclick="closeGalleryModal()"></div>
+            <div id="galleryModalPanel"
+                class="relative w-full max-w-2xl opacity-0 scale-95 translate-y-4 transition-all duration-300 z-10 text-center">
+                <button onclick="showPrevGalleryImage()"
+                    class="absolute left-[-20px] md:left-[-60px] top-1/2 -translate-y-1/2 text-white bg-blue-600/50 hover:bg-blue-600 p-2 rounded-full transition z-20">
+                    <i data-lucide="chevron-left" class="w-8 h-8"></i>
+                </button>
+                <button onclick="showNextGalleryImage()"
+                    class="absolute right-[-20px] md:right-[-60px] top-1/2 -translate-y-1/2 text-white bg-blue-600/50 hover:bg-blue-600 p-2 rounded-full transition z-20">
+                    <i data-lucide="chevron-right" class="w-8 h-8"></i>
+                </button>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-2xl">
+                    <img id="galleryModalImage" src alt
+                        class="w-full max-h-[75vh] object-contain">
+                    <div class="p-4 bg-white">
+                        <h4 id="galleryModalTitle"
+                            class="font-bold text-slate-800"></h4>
+                    </div>
+                </div>
+                <button onclick="closeGalleryModal()"
+                    class="mt-6 text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-full text-sm font-bold transition">Cerrar</button>
+            </div>
+        </div>
+
+        <footer class="bg-slate-900 text-slate-400 py-12">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h4 class="text-white font-bold mb-4">Opto Clinique</h4>
+                <div class="flex justify-center gap-6 text-xs mb-6">
+                    <a onclick="toggleLegal()"
+                        class="hover:text-blue-400">Aviso de Privacidad</a>
+                </div>
+                <div id="legalSection"
+                    class="hidden text-xs text-left max-w-2xl mx-auto bg-slate-800 p-6 rounded-lg leading-relaxed">
+                    <p class="font-bold mb-2 uppercase">Aviso de Privacidad
+                        Integral</p>
+                    <p>De conformidad con la Ley Federal de Protección de Datos
+                        Personales en Posesión de los Particulares, OPTO
+                        CLINIQUE es responsable del tratamiento de sus
+                        datos...</p>
+                </div>
+                <p class="text-[10px] mt-8">JAMPA solutions | &copy; 2026 Todos
+                    los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>lucide.createIcons();</script>
+    </body>
+</html>

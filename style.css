@@ -1,0 +1,296 @@
+/* =========================================================
+   RESET BÁSICO Y CONFIGURACIÓN GLOBAL
+   - Ajustes generales para consistencia visual
+   ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================================
+   VARIABLES DEL PROYECTO
+   - Colores y valores reutilizables
+   - Útiles para futuras mejoras y mantenimiento
+   ========================================================= */
+:root {
+    --color-primary: #2563eb;
+    --color-primary-dark: #1d4ed8;
+    --color-secondary: #0f172a;
+    --color-success: #22c55e;
+    --color-text: #1e293b;
+    --color-text-soft: #64748b;
+    --color-bg: #f8fafc;
+    --color-white: #ffffff;
+    --color-border: #e2e8f0;
+    --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-medium: 0 18px 40px rgba(15, 23, 42, 0.12);
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 1.75rem;
+}
+
+/* =========================================================
+   IMÁGENES
+   - Evita comportamientos extraños en layouts responsivos
+   ========================================================= */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   ENLACES
+   - Base para que todos los links se sientan consistentes
+   ========================================================= */
+a {
+    text-decoration: none;
+}
+
+/* =========================================================
+   BOTONES
+   - Mejora ligera de interacción
+   - Útil cuando luego agreguemos más componentes
+   ========================================================= */
+button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   FORMULARIOS
+   - Normalización visual
+   - Evita estilos inconsistentes entre navegadores
+   ========================================================= */
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* =========================================================
+   MODAL
+   - Ajustes complementarios al modal de contacto
+   - Preparado para futuras animaciones
+   ========================================================= */
+#contactModal {
+    transition: opacity 0.25s ease;
+}
+
+#contactModal.hidden {
+    display: none;
+}
+
+/* =========================================================
+   SECCIÓN LEGAL
+   - Control visual del bloque desplegable del footer
+   ========================================================= */
+#legalSection {
+    transition: all 0.25s ease;
+}
+
+/* =========================================================
+   TARJETAS DE SERVICIOS Y GALERÍA
+   - Micro-mejoras visuales reutilizables
+   ========================================================= */
+.service-card,
+.gallery-card {
+    border-radius: var(--radius-xl);
+    background: var(--color-white);
+    box-shadow: var(--shadow-soft);
+}
+
+/* =========================================================
+   UTILIDADES DE IMAGEN
+   - Para asegurar buena presentación al reutilizar clases
+   ========================================================= */
+.object-cover-center {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================================================
+   WHATSAPP FLOAT
+   - Ajustes finos del botón flotante
+   ========================================================= */
+.whatsapp-float {
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.35);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-2px) scale(1.06);
+}
+
+/* =========================================================
+   NAVEGACIÓN
+   - Soporte visual extra para navbar sticky
+   ========================================================= */
+nav {
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* =========================================================
+   HERO
+   - Utilidades por si más adelante animamos o refinamos
+   ========================================================= */
+.hero-overlay-soft {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.08),
+        rgba(37, 99, 235, 0.08)
+    );
+    pointer-events: none;
+}
+
+/* =========================================================
+   FOOTER
+   - Mejora legibilidad de textos largos legales
+   ========================================================= */
+footer p,
+footer a,
+footer span {
+    line-height: 1.6;
+}
+
+/* =========================================================
+   TRANSICIONES SUAVES GLOBALES
+   - Mantiene coherencia de interacción visual
+   ========================================================= */
+.transition-base {
+    transition: all 0.25s ease;
+}
+
+/* =========================================================
+   SOMBRAS REUTILIZABLES
+   - Útiles para siguientes componentes del proyecto
+   ========================================================= */
+.shadow-soft {
+    box-shadow: var(--shadow-soft);
+}
+
+.shadow-medium {
+    box-shadow: var(--shadow-medium);
+}
+
+/* =========================================================
+   RADIOS REUTILIZABLES
+   - Sistema básico de esquinas
+   ========================================================= */
+.rounded-project-lg {
+    border-radius: var(--radius-lg);
+}
+
+.rounded-project-xl {
+    border-radius: var(--radius-xl);
+}
+
+.rounded-project-2xl {
+    border-radius: var(--radius-2xl);
+}
+
+/* =========================================================
+   MODAL DE SERVICIOS
+   - Suaviza la animación del panel
+   ========================================================= */
+#serviceModalPanel {
+    will-change: transform, opacity;
+}
+
+#serviceModalOverlay {
+    will-change: opacity;
+}
+
+/* =========================================================
+   CARRUSEL DE MODELOS
+   - Optimización visual y de animación
+   ========================================================= */
+.season-carousel-track {
+    will-change: transform;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.season-card img {
+    pointer-events: none;
+}
+
+/* =========================================================
+   MODAL DE GALERÍA
+   - Optimización visual
+   ========================================================= */
+#galleryModalPanel {
+    will-change: transform, opacity;
+}
+
+#galleryModalOverlay {
+    will-change: opacity;
+}
+
+/* =========================================================
+   TARJETAS DE SERVICIOS INTERACTIVAS
+   - Mejora visual al pasar y hacer clic
+   ========================================================= */
+.service-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+/* =========================================================
+   AJUSTES RESPONSIVOS
+   - Espaciados y detalles para pantallas pequeñas
+   ========================================================= */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    #legalSection {
+        font-size: 0.7rem;
+    }
+}
+
+/* =========================================================
+   ACCESIBILIDAD / REDUCCIÓN DE MOVIMIENTO
+   - Respeta preferencias del usuario
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
